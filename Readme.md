@@ -125,7 +125,105 @@ Some of the data visulas that may be appropriate in answering our questions incl
 6. Scatter Plot
 7. Donut/Pie Chart
 
+### Warehouse Operations 
+
+![Warehouse Operation](Assets/Images/Warehouse.png)
+
+### Iventory
+
+![Inventory](Assets/Images/Inventory.png)
+
+### Supplier Performance
+
+![Supplier Performance](Assets/Images/Suppliers.png)
+
+### Logisitics
+
+![Logistics](Assets/Images/Logistics.png)
 
 
+## Tools Used
 
+| **Tool** | **Purpose** |
+| --- | --- |
+| Excel | Exploring the data |
+| SQL Server | Cleaning, testing, and analyzing the data |
+| Power BI | Visualizing the data via interactive dashboards |
+| GitHub | Hosting the project documentation |
+| Mokkup AI | Designing the mockup of the dashboard |
+
+
+# Development
+
+## Pseudocode
+
+## Pseudocode
+
+- How can we approach the problem to create a solution from start to finish?
+
+  1. Get the data from a reliable data source
+  2. Explore the data in Excel to check for any errors that standout
+  3. Load the data into SQL Server
+  4. Clean the data with SQL
+  5. Test the data with SQL
+  6. Load the clean data into PowerBI
+  7. Generate visualisations of the data in PowerBI
+  8. Generate the findings based on the insights
+  9. Write the documentation + commentary
+  10. Publish the insights generated
+ 
+## Data exploration notes
+
+This is the stage where we scan the data for errors, inconcsistencies, bugs, weird and corrupted characters etc.
+
+- The initial observations with this dataset are as follows:
+
+1. The dataset contains 3000 records with information related to automotive logistics, including supplier details, part information, order dates, delivery dates, costs, and inventory details.
+2. There are no missing values in any of the columns, indicating a complete dataset.
+3. The dataset includes details about warehouse capacity and current inventory levels, which can be used to analyze inventory management efficiency and warehouse utilization.
+4. Various transport modes are used, including Air, Sea, Road, and Rail. The distribution and cost implications of these modes need further analysis.
+5. Outliers exist in numerical columns such as Quantity, UnitCost, TransportCost, TotalCost, and LeadTimeDays. These outliers need further analysis to decide whether to cap, remove, or treat them in some other manner.
+6. We need to examine the correlations between numerical variables to identify potential relationships, particularly between costs, quantities, lead times, and transport modes.
+7. We can also develop hypotheses related to supply chain performance, such as the impact of transport mode on costs and lead times, or the relationship between order quantities and total costs.
+
+
+## Data Cleaning
+
+The aim is to refine the dataset to ensure it is structured and ready for analysis. 
+
+The cleaned data should meet the following criteria and constraints:
+
+- Only relevant columns should be retained.
+- All data types should be appropriate for the contents of each column.
+- No column should contain null values, indicating complete data for all records.
+
+Below is a table outlining the constraints on our cleaned dataset:
+
+| **Property** | **Description** |
+| --- | --- |
+| Number of Rows | 3000 |
+| Number of Columns | 18 |
+
+And here is a tabular representation of the expected schema for the clean data:
+
+| Column Name             | Data Type    | Description                                           |
+|-------------------------|--------------|-------------------------------------------------------|
+| `SupplierID`            | INT          | Unique identifier for the supplier                    |
+| `PartID`                | INT          | Unique identifier for the part                        |
+| `PartDescription`       | VARCHAR(255) | Description of the part                               |
+| `OrderDate`             | DATETIME     | Date and time when the order was placed               |
+| `EstimatedDeliveryDate` | DATETIME     | Estimated date and time of delivery                   |
+| `ActualDeliveryDate`    | DATETIME     | Actual date and time of delivery                      |
+| `Quantity`              | INT          | Quantity of parts ordered                             |
+| `UnitCost`              | DECIMAL(10,2)| Cost per unit of the part                             |
+| `TransportMode`         | VARCHAR(50)  | Mode of transport used for delivery (e.g., Air, Sea)  |
+| `TransportCost`         | DECIMAL(10,2)| Cost of transport                                     |
+| `WarehouseID`           | INT          | Unique identifier for the warehouse                   |
+| `WarehouseLocation`     | VARCHAR(255) | Location of the warehouse                             |
+| `WarehouseCapacity`     | INT          | Capacity of the warehouse in terms of storage units   |
+| `CurrentInventory`      | INT          | Current inventory level in the warehouse              |
+| `SupplierName`          | VARCHAR(255) | Name of the supplier                                  |
+| `SupplierLocation`      | VARCHAR(255) | Location of the supplier                              |
+| `TotalCost`             | DECIMAL(15,2)| Total cost for the order (Quantity * UnitCost)        |
+| `LeadTimeDays`          | INT          | Lead time in days for the delivery                    |
 
