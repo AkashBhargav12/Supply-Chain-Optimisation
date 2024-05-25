@@ -129,7 +129,7 @@ Some of the data visulas that may be appropriate in answering our questions incl
 
 ![Warehouse Operation](Assets/Images/Warehouse.png)
 
-### Iventory
+### Inventory
 
 ![Inventory](Assets/Images/Inventory.png)
 
