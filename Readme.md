@@ -659,7 +659,7 @@ We discovered that
    Implement inventory management practices from the top-performing warehouses (Edinburgh, Birmingham, and London) across all locations to improve turnover rates and reduce holding costs.
 
 
-## Action PLan
+## Action Plan
 
 1. Supplier Relationship Management
 
@@ -702,6 +702,7 @@ We discovered that
 ## Key Performance Indicators (KPIs) and Monitoring Methods
 
 1. Supplier Relationship Management
+
 **KPIs**
 - Supplier Performance Score: A composite score based on quality, delivery, and cost metrics.
 - Contract Compliance Rate: Percentage of suppliers adhering to contract terms.
@@ -713,6 +714,7 @@ We discovered that
 - Regularly update and review supplier scorecards.
 
 2. Inventory Optimization for High-Demand Parts
+
 **KPIs**
 - Stockout Rate: Frequency of stockouts for high-demand parts.
 - Inventory Turnover Ratio: How often inventory is sold and replaced over a period.
@@ -724,6 +726,7 @@ We discovered that
 - Conduct monthly reviews of inventory turnover ratios and adjust safety stock levels accordingly.
 
 3. Lead Time Reduction Initiatives
+
 **KPIs**
 - Average Lead Time: The average number of days between order placement and delivery.
 - Lead Time Variability: The consistency of lead times (measured by standard deviation).
@@ -735,6 +738,7 @@ We discovered that
 - Regularly analyze lead time data and adjust strategies as needed.
 
 4. Enhance Delivery Performance
+
 **KPIs**
 - On-Time Delivery Rate: Percentage of orders delivered on or before the estimated delivery date.
 - Delivery Accuracy: Percentage of deliveries meeting quality and quantity specifications.
@@ -746,6 +750,7 @@ We discovered that
 - Collect and review customer feedback regularly through surveys and direct communication.
 
 5. Cost-Effective Transport Solutions
+
 **KPIs**
 - Transport Cost per Unit: Average cost of transporting goods per unit.
 - Mode Utilization Rate: Percentage use of cost-effective transport modes (e.g., rail).
@@ -757,6 +762,7 @@ We discovered that
 - Regularly review transport cost reports and adjust transport strategies.
 
 6. Supplier Selection and Management
+
 **KPIs**
 - Supplier Lead Time: Average lead time per supplier.
 - Quality Rejection Rate: Percentage of parts rejected due to quality issues.
@@ -768,6 +774,7 @@ We discovered that
 - Track procurement data to ensure adherence to the preferred supplier list.
 
 7. Inventory Management Enhancement
+
 **KPIs**
 - Inventory Accuracy: Percentage accuracy of inventory records compared to physical counts.
 - Order Fulfillment Rate: Percentage of orders fulfilled without delays.
