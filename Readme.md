@@ -10,51 +10,27 @@
 # Table of Contents
 
 - [Objective](#objective)
-- [User Story](#user-story)
-- [Data Source](#data-source)
+  - [User Story](#user-story)
+  - [Target Audience](#target-audience)
+  - [Data Source](#data-source)
 - [Stages](#stages)
 - [Design](#design)
-  - [Dashboard components required](#dashboard-components-required)
-  - [Dashboard mockup](#dashboard-mockup)
+  - [DashBoard Mockups](#dashboard-mockups)
   - [Tools Used](#tools-used)
 - [Development](#development)
   - [Pseudocode](#pseudocode)
-  - [Data exploration notes](#data-exploration-notes)
-  - [Data cleaning](#data-cleaning)
-  - [Transform the data](#transform-the-data)
-  - [Create the SQL view](#create-the-sql-view)
-- [Testing](#testing)
-  - [Row Count check](#row-count-check)
-  - [Column Count check](#column-count-check)
-  - [Data Type check](#data-type-check)
-  - [Duplicate Count check](#duplicate-count-check)
+  - [Data Exploration Notes](#data-exploration-notes)
+- [Data Cleaning and Testing](#data-cleaning-and-testing)
+  - [Transform and Test the Data](#transform-and-test-the-data)
 - [Visualisation](#visualisation)
   - [Results](#results)
   - [DAX Measures](#dax-measures)
-    - [Total Subscribers (M)](#total-subscribers-m)
-    - [Total Views (B)](#total-views-b)
-    - [Total Videos](#total-videos)
-    - [Average Views Per Video (M)](#average-views-per-video-m)
-    - [Subscriber Engagement Rate](#subscriber-engagement-rate)
-    - [Views per subscriber](#views-per-subscriber)
 - [Analysis](#analysis)
   - [Findings](#findings)
-    - [Top 10 YouTubers with the most subscribers](#1-who-are-the-top-10-youtubers-with-the-most-subscribers)
-    - [Top 3 channels with the most videos uploaded](#2-which-3-channels-have-uploaded-the-most-videos)
-    - [Top 3 channels with the most views](#3-which-3-channels-have-the-most-views)
-    - [Top 3 channels with the highest average views per video](#4-which-3-channels-have-the-highest-average-views-per-video)
-    - [Top 3 channels with the highest views per subscriber ratio](#5-which-3-channels-have-the-highest-views-per-subscriber-ratio)
-    - [Top 3 channels with the highest subscriber engagement rate per video uploaded](#6-which-3-channels-have-the-highest-subscriber-engagement-rate-per-video-uploaded)
-  - [Notes](#notes)
-  - [Validation](#validation)
-    - [Youtubers with the most subscribers](#1-youtubers-with-the-most-subscribers)
-    - [Youtubers with the most videos uploaded](#2-youtubers-with-the-most-videos-uploaded)
-    - [Youtubers with the most views](#3-youtubers-with-the-most-views)
-  - [Discovery](#discovery)
-  - [Recommendations](#recommendations)
-  - [Potential ROI](#potential-roi)
-  - [Action plan](#action-plan)
-
+- [Recommendations](#recommendations)
+- [Action Plan](#action-plan)
+- [Key Performance Indicators (KPIs) and Monitoring Methods](#key-performance-indicators-kpis-and-monitoring-methods)
+- [Conclusion](#conclusion)
 
 
 
@@ -62,13 +38,15 @@
 
 - What is the key objective of the project?
 
-  To optimise the logistics and supply chain for a vehicle manufacturer. The objectives can be broken down as follows:
+To optimize the logistics and supply chain for a vehicle manufacturer, focusing on enhancing delivery performance, improving supplier relationships, reducing transportation costs, and refining inventory management. The objectives are:
 
-  1. Optimise Delivery Routes and Schedules
-  2. Enhance Inventory Management
-  3. Reduce Transportation Costs
-  4. Improve Supplier Performance
-
+1. Strengthen Supplier Relationships
+2. Optimize Inventory Management for High-Demand Parts
+3. Reduce Lead Time
+4. Improve On-Time Delivery Rate
+5. Implement Cost-Effective Transport Solutions
+6. Prioritize Best Suppliers for Each Part Category
+7. Adopt Best Practices in Inventory Management
 
 ## User Story
 
@@ -106,9 +84,7 @@ The dashboard can contain the following components, to prove a  comprehensive ov
 4. Transportation Efficciency
 5. Cost Analysis
 6. Delivery Efficiency
-7. Optimisation Insights
-8. Scenario Analysis
-9. Interactive Filters and Drill-Downs
+7. Interactive Filters and Drill-Downs
 
 
 ## DashBoard Mockups
@@ -410,3 +386,399 @@ LIMIT 5;
 SELECT AVG(TransportCost) AS AvgTransportCost, MIN(TransportCost) AS MinTransportCost, MAX(TransportCost) AS MaxTransportCost, STDDEV(TransportCost) AS StdDevTransportCost
 FROM Cleaned_Automotive_Logistics;
 ```
+
+
+# Visualisation
+
+## Results
+
+- What does the Dashboard look like?
+Below is a link to access the dashboard:
+
+[PowerBI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYTUxMWU2MGQtNTJmZC00MGFhLWE4MzEtYTZkMTU0YzJjMjAyIiwidCI6ImI1MWY0MTY0LTE1M2ItNDhlYi05MWMyLTZiYzVmYTgxNmI0NiJ9)
+
+The dashboard has been created with 6 different pages and an additional navigation pane. Here are the visuals for each of the pages:
+
+### Navigation Pane
+
+![Navigation Pane](Assets/Images/Navigation Pane.png)
+
+### Overview
+
+![Overview](Assets/Images/Overview Pane.png)
+
+### Supplier Perfromance
+
+![Supplier Performance](Assets/Images/Supplier Perfromance pane.png)
+
+### Warehouse Operations
+
+![Warehouse Operations](Assets/Images/Warehouse operations pane.png)
+
+### Transport Performance
+
+![Transport Performance](Assets/Images/Transport efficiency pane.png)
+
+### Delivery Performance
+
+![Delivery Performance](Assets/Images/Delivery performance.png)
+
+### Cost Analysis
+
+![Cost Analysis](Assets/Images/Cost Analysis pane.png)
+
+
+## Dax Measures
+
+### 1. Order ID
+```sql
+OrderID = CONVERT('automotive_logistics cleaned_automotive_logistics'[SupplierID], STRING) & 
+    "_" & 
+    CONVERT('automotive_logistics cleaned_automotive_logistics'[PartID], STRING) & 
+    "_" & 
+    FORMAT('automotive_logistics cleaned_automotive_logistics'[OrderDate], "YYYYMMDD")
+```
+
+### 2. Route
+```sql
+Route = 'automotive_logistics cleaned_automotive_logistics'[SupplierLocation] & "-" & 'automotive_logistics cleaned_automotive_logistics'[WarehouseLocation]
+```
+
+### 3. On Time Delivery Rate
+```sql
+On Time Delivery Rate = 
+VAR TotalOrders = COUNTROWS('automotive_logistics cleaned_automotive_logistics')
+VAR OnTimeDeliveries = COUNTROWS(
+    Filter(
+        'automotive_logistics cleaned_automotive_logistics',
+        'automotive_logistics cleaned_automotive_logistics'[ActualDeliveryDate] <= 'automotive_logistics cleaned_automotive_logistics'[EstimatedDeliveryDate]))
+RETURN
+DIVIDE(OnTimeDeliveries, TotalOrders, 0)
+```
+
+### 4. Inventory Utilisation
+```sql
+Inventory Utilisation = 
+DIVIDE( 
+    SUM('automotive_logistics cleaned_automotive_logistics'[CurrentInventory]),
+    SUM('automotive_logistics cleaned_automotive_logistics'[WarehouseCapacity])
+    )
+```
+
+### 5. Delayed deliveries
+```sql
+Delayed Deliveries = 
+CALCULATE(
+    COUNTROWS('automotive_logistics cleaned_automotive_logistics'),
+    'automotive_logistics cleaned_automotive_logistics'[ActualDeliveryDate] > 'automotive_logistics cleaned_automotive_logistics'[EstimatedDeliveryDate]
+)
+```
+
+### 6. Estimated delivery in days
+```sql
+Estimated delivery days = 
+DATEDIFF('automotive_logistics cleaned_automotive_logistics'[OrderDate],'automotive_logistics cleaned_automotive_logistics'[EstimatedDeliveryDate],DAY)
+```
+
+### 7. Actual Delivery in days
+```sql
+Actual Delivery days = 
+DATEDIFF('automotive_logistics cleaned_automotive_logistics'[OrderDate],'automotive_logistics cleaned_automotive_logistics'[ActualDeliveryDate],DAY)
+```
+
+### 8. Late Deliveries in days
+```sql
+Late Deliveries = 
+'automotive_logistics cleaned_automotive_logistics'[Estimated delivery days] - 'automotive_logistics cleaned_automotive_logistics'[Actual Delivery days]
+```
+
+
+# Analysis
+
+## Findings
+
+- For this analysis, we are going to focus on the below questions to get the information we need:
+
+1. Who are the top 5 suppliers by quantity supplied?
+2. What are the top 3 parts ordered the most?
+3. What is the average lead time?
+4. What is the on time delivery rate?
+5. Which mode of transport is the best option?
+6. Which supplier is best for each category of the part?
+7. Which warehouse has the best inventory turnover rate?
+
+### 1. Top 5 suppliers by quanitty supplied
+
+| **SupplierName** | **TotalQuantity** |
+| --- | --- |
+| SUPPLIER_376 | 8445 |
+| SUPPLIER_390 | 7342 |
+| SUPPLIER_126 | 7337 |
+| SUPPLIER_55 | 7273 |
+| SUPPLIER_304 | 6933 |
+
+#### SQL Query
+```sql
+
+SELECT SupplierName, SUM(Quantity) AS TotalQuantity
+FROM cleaned_automotive_logistics
+GROUP BY SupplierName
+ORDER BY TotalQuantity DESC
+LIMIT 5;
+```
+
+### 2. Top 3 most ordered parts
+
+| **PartDescription** | **TotalOrdered** |
+| WINDSHIELD | 166922 |
+| DOOR | 165268 |
+| SEAT | 157901 |
+
+#### SQL Query
+```sql
+
+SELECT PartDescription, SUM(Quantity) AS TotalOrdered
+FROM cleaned_automotive_logistics
+GROUP BY PartDescription
+ORDER BY TotalOrdered DESC
+LIMIT 3;
+```
+
+### 3. Average Lead Time
+
+| **AverageLeadTime** |
+| 13.6757 |
+
+#### SQL Query
+```sql
+
+SELECT AVG(LeadTimeDays) AS AverageLeadTime
+FROM cleaned_automotive_logistics;
+```
+
+### 4. On Time Delivery Rate
+
+| **OnTimeDeliveryRate** |
+| 40.53% |
+
+#### SQL Query
+```sql
+
+SELECT 
+  (SUM(CASE WHEN ActualDeliveryDate <= EstimatedDeliveryDate THEN 1 ELSE 0 END) / COUNT(*)) * 100 AS OnTimeDeliveryRate
+FROM cleaned_automotive_logistics;
+```
+
+### 5. Best Transport Mode
+
+| **TransportMode**| **AvgCost** |
+| RAIL | 1050.43 |
+
+#### SQL Query
+```sql
+
+SELECT TransportMode, AVG(TransportCost) AS AvgCost
+FROM cleaned_automotive_logistics
+GROUP BY TransportMode
+ORDER BY AvgCost ASC
+LIMIT 1;
+```
+
+### 6. Best Supplier for each part
+
+| **PartDescription** |	**SupplierName** |	**AvgLeadTime** |
+| BATTERY	| SUPPLIER_459	| 2.0000 |
+| BRAKE	| SUPPLIER_228	| 2.0000 |
+| DOOR	| SUPPLIER_176	| 2.0000 |
+| ENGINE	| SUPPLIER_444	| 2.0000 |
+| SEAT	| SUPPLIER_283	| 2.0000 |
+| STEERING	| SUPPLIER_248	| 2.0000 |
+| SUSPENSION	| SUPPLIER_397	| 2.0000 |
+| TIRE	| SUPPLIER_234	| 2.0000 |
+| TRANSMISSION	| SUPPLIER_54	| 2.0000 |
+| WINDSHIELD	| SUPPLIER_427 |	2.0000 |
+
+#### SQL Query
+```sql
+
+SELECT t.PartDescription, t.SupplierName, t.AvgLeadTime
+FROM (
+    SELECT PartDescription, SupplierName, AVG(LeadTimeDays) AS AvgLeadTime,
+           ROW_NUMBER() OVER (PARTITION BY PartDescription ORDER BY AVG(LeadTimeDays)) AS rn
+    FROM cleaned_automotive_logistics
+    GROUP BY PartDescription, SupplierName
+) t
+WHERE t.rn = 1;
+```
+
+### 7. Top warehouse by turnover rate
+
+| **WarehouseLocation** |	**InventoryTurnoverRate** |
+| EDINBURGH |	97.6138 |
+| BIRMINGHAM |	96.6727 |
+| LONDON |	91.4150 |
+
+#### SQL Query
+```sql
+
+SELECT WarehouseLocation, (SUM(Quantity) / AVG(CurrentInventory)) AS InventoryTurnoverRate
+FROM cleaned_automotive_logistics
+GROUP BY WarehouseLocation
+ORDER BY InventoryTurnoverRate DESC
+LIMIT 3;
+```
+
+## Discovery
+
+We discovered that
+
+1. The top 5 suppliers by quantity supplied are SUPPLIER_376, SUPPLIER_390, Supplier_126, Supplier_55, and Supplier_304, indicating their significant contribution to the supply chain.
+2. The most ordered parts are Windshield, Door, and Seat, reflecting their high demand. The high demand for the secondary parts can indicate that there might be a shortage of supply.
+3. The average lead time across all orders is approximately 14 days, suggesting a moderate waiting period between order placement and delivery.
+4. The on-time delivery rate is approx. 40.53% indicating that majority of deliveries are delayed. More data around thie cause of dealy needs to be collected and analysed to improve hthe overall efficiency.
+5. Rail Transport has been identified as the most cost effective mode of transport based on the average cost.
+6. The best suppliers for each category has been identified based on the average lead time.
+7. Best performing warehouse locations have been identified as Edinburgh, Birmingham and London, based on the inventory turnover rate. This indicated efficient inventory management and rapid stock movement.
+
+
+# Reccommendations
+
+1. Strengthen Supplier Relationships
+   Develop strategic long-term partnerships with the top 5 suppliers (SUPPLIER_376, SUPPLIER_390, Supplier_126, Supplier_55, and Supplier_304) to ensure reliable supply and negotiate better terms. Utilise tools like the Kraljic Matrix and    Dutch Windmill framework for strategic design of the partership framework.
+2. Focus on High-Demand Parts
+   Increase the stock levels of the most ordered parts (Windshield, Door, and Seat) to meet high demand and prevent potential shortages.
+3. Reduce Lead Time
+   Implement process improvements and work closely with suppliers to reduce the average lead time, aiming for a target below the current 14-day average.
+4. Improve On-Time Delivery Rate
+   Investigate the reasons behind the low on-time delivery rate (40.53%) and implement corrective actions such as better planning, improved communication with suppliers, and enhanced logistics coordination.
+5. Optimize Transport Costs
+   Utilize rail transport more frequently as it has been identified as the most cost-effective mode, balancing cost savings with delivery speed and reliability.
+6. Leverage Best Suppliers for Each Part Category
+   Ensure that the identified best suppliers for each part category are prioritized in procurement to maintain low lead times and high-quality standards.
+7. Adopt Best Practices in Inventory Management
+   Implement inventory management practices from the top-performing warehouses (Edinburgh, Birmingham, and London) across all locations to improve turnover rates and reduce holding costs.
+
+
+## Action PLan
+
+1. Supplier Relationship Management
+
+- Schedule quarterly business reviews with the top 5 suppliers to discuss performance, expectations, and opportunities for improvement.
+- Negotiate long-term contracts with favorable terms based on volume discounts and service-level agreements.
+
+2. Inventory Optimization for High-Demand Parts
+
+- Conduct a demand forecasting analysis to accurately predict future needs for Windshield, Door, and Seat.
+- Increase safety stock levels for these parts and review reorder points regularly to ensure timely replenishment.
+
+3. Lead Time Reduction Initiatives
+
+- Map the entire supply chain process to identify bottlenecks and implement lean manufacturing principles to streamline operations.
+- Collaborate with suppliers to adopt just-in-time (JIT) delivery practices where feasible.
+
+4. Enhance Delivery Performance
+
+- Implement a real-time tracking system for shipments to monitor delivery performance.
+- Set up a task force to analyze late deliveries and develop targeted improvement plans.
+- Offer incentives to suppliers for meeting or exceeding on-time delivery targets.
+
+5. Cost-Effective Transport Solutions
+
+- Review the transport mix and increase the use of rail transport for routes where it is most beneficial.
+- Negotiate with logistics providers for better rates and service levels for rail transport.
+
+6. Supplier Selection and Management
+
+- Establish a supplier scorecard to regularly evaluate suppliers based on lead time, quality, cost, and reliability.
+- Create a preferred supplier list for each part category and ensure procurement teams adhere to it.
+
+7. Inventory Management Enhancement
+
+- Conduct training sessions for warehouse staff on best practices in inventory management observed in the top-performing warehouses.
+- Implement advanced inventory management systems (IMS) to automate tracking and improve accuracy.
+- Regularly review and adjust inventory policies based on performance data and turnover rates.
+
+
+## Key Performance Indicators (KPIs) and Monitoring Methods
+
+1. Supplier Relationship Management
+**KPIs**
+- Supplier Performance Score: A composite score based on quality, delivery, and cost metrics.
+- Contract Compliance Rate: Percentage of suppliers adhering to contract terms.
+- Quarterly Business Review Attendance: Number of reviews held with key suppliers.
+
+**Monitoring Methods**
+- Use a supplier management software to track performance scores and compliance.
+- Schedule and document quarterly business reviews in a centralized calendar.
+- Regularly update and review supplier scorecards.
+
+2. Inventory Optimization for High-Demand Parts
+**KPIs**
+- Stockout Rate: Frequency of stockouts for high-demand parts.
+- Inventory Turnover Ratio: How often inventory is sold and replaced over a period.
+- Safety Stock Levels: Actual vs. target safety stock levels.
+
+**Monitoring Methods**
+- Implement an inventory management system (IMS) to track stock levels in real-time.
+- Set automatic alerts for low stock levels to prevent stockouts.
+- Conduct monthly reviews of inventory turnover ratios and adjust safety stock levels accordingly.
+
+3. Lead Time Reduction Initiatives
+**KPIs**
+- Average Lead Time: The average number of days between order placement and delivery.
+- Lead Time Variability: The consistency of lead times (measured by standard deviation).
+- On-Time Delivery Improvement: Percentage reduction in late deliveries.
+
+**Monitoring Methods**
+- Use project management tools to map and monitor supply chain processes.
+- Implement process improvement methodologies (e.g., Lean, Six Sigma) and track project progress.
+- Regularly analyze lead time data and adjust strategies as needed.
+
+4. Enhance Delivery Performance
+**KPIs**
+- On-Time Delivery Rate: Percentage of orders delivered on or before the estimated delivery date.
+- Delivery Accuracy: Percentage of deliveries meeting quality and quantity specifications.
+- Customer Satisfaction Score: Feedback from internal and external customers regarding delivery performance.
+
+**Monitoring Methods**
+- Implement a real-time shipment tracking system.
+- Conduct root cause analysis for late deliveries and develop corrective action plans.
+- Collect and review customer feedback regularly through surveys and direct communication.
+
+5. Cost-Effective Transport Solutions
+**KPIs**
+- Transport Cost per Unit: Average cost of transporting goods per unit.
+- Mode Utilization Rate: Percentage use of cost-effective transport modes (e.g., rail).
+- Freight Efficiency: Ratio of transport cost to distance covered or weight transported.
+
+**Monitoring Methods**
+- Use transport management systems (TMS) to track transport costs and modes.
+- Negotiate and document contracts with logistics providers in a centralized system.
+- Regularly review transport cost reports and adjust transport strategies.
+
+6. Supplier Selection and Management
+**KPIs**
+- Supplier Lead Time: Average lead time per supplier.
+- Quality Rejection Rate: Percentage of parts rejected due to quality issues.
+- Preferred Supplier Utilization Rate: Percentage of purchases made from preferred suppliers.
+
+**Monitoring Methods**
+- Maintain a database of supplier performance metrics and update it regularly.
+- Conduct regular audits of supplier performance against the scorecard criteria.
+- Track procurement data to ensure adherence to the preferred supplier list.
+
+7. Inventory Management Enhancement
+**KPIs**
+- Inventory Accuracy: Percentage accuracy of inventory records compared to physical counts.
+- Order Fulfillment Rate: Percentage of orders fulfilled without delays.
+- Inventory Turnover Improvement: Improvement in inventory turnover ratio over time.
+
+**Monitoring Methods**
+- Use an advanced IMS to automate inventory tracking and reporting.
+- Schedule regular training sessions for warehouse staff on inventory best practices.
+- Conduct periodic audits of inventory records and physical counts to ensure accuracy.
+
+
+# Conclusion
+
+This project aimed to optimize the logistics and supply chain processes for a vehicle manufacturer. By analyzing supplier performance, inventory turnover, transportation costs, and delivery efficiency, we identified key areas for improvement. The top suppliers were highlighted for strategic partnership development, and high-demand parts were pinpointed for inventory optimization. We discovered that the average lead time and on-time delivery rates needed significant improvement. Rail transport emerged as the most cost-effective mode. Based on these insights, we formulated a comprehensive set of recommendations and an actionable plan to enhance supply chain efficiency, reduce costs, and ensure timely delivery of parts and components. Implementing these strategies will support Just-In-Time (JIT) manufacturing and overall operational excellence.
