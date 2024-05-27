@@ -661,38 +661,38 @@ We discovered that
 
 ## Action Plan
 
-1. Supplier Relationship Management
+### Supplier Relationship Management
 
 - Schedule quarterly business reviews with the top 5 suppliers to discuss performance, expectations, and opportunities for improvement.
 - Negotiate long-term contracts with favorable terms based on volume discounts and service-level agreements.
 
-2. Inventory Optimization for High-Demand Parts
+### Inventory Optimization for High-Demand Parts
 
 - Conduct a demand forecasting analysis to accurately predict future needs for Windshield, Door, and Seat.
 - Increase safety stock levels for these parts and review reorder points regularly to ensure timely replenishment.
 
-3. Lead Time Reduction Initiatives
+### Lead Time Reduction Initiatives
 
 - Map the entire supply chain process to identify bottlenecks and implement lean manufacturing principles to streamline operations.
 - Collaborate with suppliers to adopt just-in-time (JIT) delivery practices where feasible.
 
-4. Enhance Delivery Performance
+### Enhance Delivery Performance
 
 - Implement a real-time tracking system for shipments to monitor delivery performance.
 - Set up a task force to analyze late deliveries and develop targeted improvement plans.
 - Offer incentives to suppliers for meeting or exceeding on-time delivery targets.
 
-5. Cost-Effective Transport Solutions
+### Cost-Effective Transport Solutions
 
 - Review the transport mix and increase the use of rail transport for routes where it is most beneficial.
 - Negotiate with logistics providers for better rates and service levels for rail transport.
 
-6. Supplier Selection and Management
+### Supplier Selection and Management
 
 - Establish a supplier scorecard to regularly evaluate suppliers based on lead time, quality, cost, and reliability.
 - Create a preferred supplier list for each part category and ensure procurement teams adhere to it.
 
-7. Inventory Management Enhancement
+### Inventory Management Enhancement
 
 - Conduct training sessions for warehouse staff on best practices in inventory management observed in the top-performing warehouses.
 - Implement advanced inventory management systems (IMS) to automate tracking and improve accuracy.
@@ -701,7 +701,7 @@ We discovered that
 
 ## Key Performance Indicators (KPIs) and Monitoring Methods
 
-1. Supplier Relationship Management
+- **Supplier Relationship Management**
 
 **KPIs**
 - Supplier Performance Score: A composite score based on quality, delivery, and cost metrics.
@@ -713,7 +713,7 @@ We discovered that
 - Schedule and document quarterly business reviews in a centralized calendar.
 - Regularly update and review supplier scorecards.
 
-2. Inventory Optimization for High-Demand Parts
+- **Inventory Optimization for High-Demand Parts**
 
 **KPIs**
 - Stockout Rate: Frequency of stockouts for high-demand parts.
@@ -725,7 +725,7 @@ We discovered that
 - Set automatic alerts for low stock levels to prevent stockouts.
 - Conduct monthly reviews of inventory turnover ratios and adjust safety stock levels accordingly.
 
-3. Lead Time Reduction Initiatives
+- **Lead Time Reduction Initiatives**
 
 **KPIs**
 - Average Lead Time: The average number of days between order placement and delivery.
@@ -737,7 +737,7 @@ We discovered that
 - Implement process improvement methodologies (e.g., Lean, Six Sigma) and track project progress.
 - Regularly analyze lead time data and adjust strategies as needed.
 
-4. Enhance Delivery Performance
+- **Enhance Delivery Performance**
 
 **KPIs**
 - On-Time Delivery Rate: Percentage of orders delivered on or before the estimated delivery date.
@@ -749,7 +749,7 @@ We discovered that
 - Conduct root cause analysis for late deliveries and develop corrective action plans.
 - Collect and review customer feedback regularly through surveys and direct communication.
 
-5. Cost-Effective Transport Solutions
+- **Cost-Effective Transport Solutions**
 
 **KPIs**
 - Transport Cost per Unit: Average cost of transporting goods per unit.
@@ -761,7 +761,7 @@ We discovered that
 - Negotiate and document contracts with logistics providers in a centralized system.
 - Regularly review transport cost reports and adjust transport strategies.
 
-6. Supplier Selection and Management
+- **Supplier Selection and Management**
 
 **KPIs**
 - Supplier Lead Time: Average lead time per supplier.
@@ -773,7 +773,7 @@ We discovered that
 - Conduct regular audits of supplier performance against the scorecard criteria.
 - Track procurement data to ensure adherence to the preferred supplier list.
 
-7. Inventory Management Enhancement
+- **Inventory Management Enhancement**
 
 **KPIs**
 - Inventory Accuracy: Percentage accuracy of inventory records compared to physical counts.
