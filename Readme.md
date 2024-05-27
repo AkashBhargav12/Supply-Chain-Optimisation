@@ -701,7 +701,7 @@ We discovered that
 
 ## Key Performance Indicators (KPIs) and Monitoring Methods
 
-- **Supplier Relationship Management**
+### **Supplier Relationship Management**
 
 **KPIs**
 - Supplier Performance Score: A composite score based on quality, delivery, and cost metrics.
@@ -713,7 +713,8 @@ We discovered that
 - Schedule and document quarterly business reviews in a centralized calendar.
 - Regularly update and review supplier scorecards.
 
-- **Inventory Optimization for High-Demand Parts**
+
+### **Inventory Optimization for High-Demand Parts**
 
 **KPIs**
 - Stockout Rate: Frequency of stockouts for high-demand parts.
@@ -725,7 +726,8 @@ We discovered that
 - Set automatic alerts for low stock levels to prevent stockouts.
 - Conduct monthly reviews of inventory turnover ratios and adjust safety stock levels accordingly.
 
-- **Lead Time Reduction Initiatives**
+
+### **Lead Time Reduction Initiatives**
 
 **KPIs**
 - Average Lead Time: The average number of days between order placement and delivery.
@@ -737,7 +739,8 @@ We discovered that
 - Implement process improvement methodologies (e.g., Lean, Six Sigma) and track project progress.
 - Regularly analyze lead time data and adjust strategies as needed.
 
-- **Enhance Delivery Performance**
+
+### **Enhance Delivery Performance**
 
 **KPIs**
 - On-Time Delivery Rate: Percentage of orders delivered on or before the estimated delivery date.
@@ -749,7 +752,8 @@ We discovered that
 - Conduct root cause analysis for late deliveries and develop corrective action plans.
 - Collect and review customer feedback regularly through surveys and direct communication.
 
-- **Cost-Effective Transport Solutions**
+
+### **Cost-Effective Transport Solutions**
 
 **KPIs**
 - Transport Cost per Unit: Average cost of transporting goods per unit.
@@ -761,7 +765,8 @@ We discovered that
 - Negotiate and document contracts with logistics providers in a centralized system.
 - Regularly review transport cost reports and adjust transport strategies.
 
-- **Supplier Selection and Management**
+
+### **Supplier Selection and Management**
 
 **KPIs**
 - Supplier Lead Time: Average lead time per supplier.
@@ -773,7 +778,8 @@ We discovered that
 - Conduct regular audits of supplier performance against the scorecard criteria.
 - Track procurement data to ensure adherence to the preferred supplier list.
 
-- **Inventory Management Enhancement**
+
+### **Inventory Management Enhancement**
 
 **KPIs**
 - Inventory Accuracy: Percentage accuracy of inventory records compared to physical counts.
