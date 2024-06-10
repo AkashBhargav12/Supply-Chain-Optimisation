@@ -91,7 +91,7 @@ The dashboard can contain the following components, to prove a  comprehensive ov
 
 What should the Dashboard Look like?
 
-Some of the data visulas that may be appropriate in answering our questions include:
+Some of the data visuals that may be appropriate in answering our questions include:
 
 1. Table
 2. Bar Chart
