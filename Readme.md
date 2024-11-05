@@ -395,7 +395,7 @@ FROM Cleaned_Automotive_Logistics;
 - What does the Dashboard look like?
 Below is a link to access the dashboard:
 
-[PowerBI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYTUxMWU2MGQtNTJmZC00MGFhLWE4MzEtYTZkMTU0YzJjMjAyIiwidCI6ImI1MWY0MTY0LTE1M2ItNDhlYi05MWMyLTZiYzVmYTgxNmI0NiJ9)
+[PowerBI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNWI1MjA0NjYtOTk4Ny00OGM2LWFkOGYtYWM0NzMwNTBhYWY5IiwidCI6IjhkMWQzMjI3LWRhMjAtNGQ5ZS1iMGE1LTZiNWU4MzAzZDI4YyJ9)
 
 The dashboard has been created with 6 different pages and an additional navigation pane. Here are the visuals for each of the pages:
 
