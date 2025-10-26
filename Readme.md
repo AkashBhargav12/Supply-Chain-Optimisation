@@ -70,26 +70,26 @@ The data for this project is coming from a synthesized dataset based on hypothet
 - Development
 - Testing
 - Analysis
-- Reccomendations
+- Recommendations
 
 
 # Design
 
 - Based on the requirements provided, how can we build a dashboard to gain insights?
 
-The dashboard can contain the following components, to prove a  comprehensive overview of the supply chain performance, enabling stakeholders to make informed decisions and optimise operations effectively:
+The dashboard can contain the following components to prove a  comprehensive overview of the supply chain performance, enabling stakeholders to make informed decisions and optimise operations effectively:
 1. Overview Section
 2. Supplier Performance
 3. Warehouse Inventory Management
-4. Transportation Efficciency
+4. Transportation Efficiency
 5. Cost Analysis
 6. Delivery Efficiency
 7. Interactive Filters and Drill-Downs
 
 
-## DashBoard Mockups
+## Dashboard Mockups
 
-What should the Dashboard Look like?
+What should the Dashboard look like?
 
 Some of the data visuals that may be appropriate in answering our questions include:
 
@@ -113,7 +113,7 @@ Some of the data visuals that may be appropriate in answering our questions incl
 
 ![Supplier Performance](Assets/Images/Suppliers.png)
 
-### Logisitics
+### Logistics
 
 ![Logistics](Assets/Images/Logistics.png)
 
@@ -138,19 +138,19 @@ Some of the data visuals that may be appropriate in answering our questions incl
 - How can we approach the problem to create a solution from start to finish?
 
   1. Get the data from a reliable data source
-  2. Explore the data in Excel to check for any errors that standout
+  2. Explore the data in Excel to check for any errors that stand out
   3. Load the data into SQL Server
   4. Clean the data with SQL
   5. Test the data with SQL
-  6. Load the clean data into PowerBI
-  7. Generate visualisations of the data in PowerBI
+  6. Load the clean data into Power BI
+  7. Generate visualisations of the data in Power BI
   8. Generate the findings based on the insights
   9. Write the documentation + commentary
   10. Publish the insights generated
  
 ## Data exploration notes
 
-This is the stage where we scan the data for errors, inconcsistencies, bugs, weird and corrupted characters etc.
+This is the stage where we scan the data for errors, inconsistencies, bugs, weird and corrupted characters, etc.
 
 - The initial observations with this dataset are as follows:
 
@@ -635,13 +635,13 @@ We discovered that
 1. The top 5 suppliers by quantity supplied are SUPPLIER_376, SUPPLIER_390, Supplier_126, Supplier_55, and Supplier_304, indicating their significant contribution to the supply chain.
 2. The most ordered parts are Windshield, Door, and Seat, reflecting their high demand. The high demand for the secondary parts can indicate that there might be a shortage of supply.
 3. The average lead time across all orders is approximately 14 days, suggesting a moderate waiting period between order placement and delivery.
-4. The on-time delivery rate is approx. 40.53% indicating that majority of deliveries are delayed. More data around thie cause of dealy needs to be collected and analysed to improve hthe overall efficiency.
-5. Rail Transport has been identified as the most cost effective mode of transport based on the average cost.
-6. The best suppliers for each category has been identified based on the average lead time.
-7. Best performing warehouse locations have been identified as Edinburgh, Birmingham and London, based on the inventory turnover rate. This indicated efficient inventory management and rapid stock movement.
+4. The on-time delivery rate is approximately. 40.53% indicating that the majority of deliveries are delayed. More data around the cause of delay needs to be collected and analysed to improve the overall efficiency.
+5. Rail Transport has been identified as the most cost-effective mode of transport based on the average cost.
+6. The best suppliers for each category have been identified based on the average lead time.
+7. Best performing warehouse locations have been identified as Edinburgh, Birmingham, and London, based on the inventory turnover rate. This indicated efficient inventory management and rapid stock movement.
 
 
-# Reccommendations
+# Recommendations
 
 1. Strengthen Supplier Relationships
    Develop strategic long-term partnerships with the top 5 suppliers (SUPPLIER_376, SUPPLIER_390, Supplier_126, Supplier_55, and Supplier_304) to ensure reliable supply and negotiate better terms. Utilise tools like the Kraljic Matrix and    Dutch Windmill framework for strategic design of the partership framework.
@@ -784,7 +784,7 @@ We discovered that
 **KPIs**
 - Inventory Accuracy: Percentage accuracy of inventory records compared to physical counts.
 - Order Fulfillment Rate: Percentage of orders fulfilled without delays.
-- Inventory Turnover Improvement: Improvement in inventory turnover ratio over time.
+- Inventory Turnover Improvement: Improvement in the inventory turnover ratio over time.
 
 **Monitoring Methods**
 - Use an advanced IMS to automate inventory tracking and reporting.
